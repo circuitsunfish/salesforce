@@ -1,4 +1,8 @@
-public class AccountHandler {
+public with sharing class AccountHandler {
+    public  AccountHandler(){
+        Account emptyAccount = new Account();
+        return emptyAccount;
+    }
     public static Account insertNewAccount(String accountName) {
             Account acct = new Account();
             acct.Name = accountName;
