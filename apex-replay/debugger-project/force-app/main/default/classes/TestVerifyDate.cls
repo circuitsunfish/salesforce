@@ -9,17 +9,17 @@ private class TestVerifyDate {
         Date testDate = date.newinstance(2001,11,17);
         //november has 30 days
         String testEndOfMonthString = VerifyDate.SetEndOfMonthDate(testDate).format();
-        System.assertEquals('2001/11/30',testEndOfMonthString,'End of month was not expected');
+        System.assertEquals('11/30/2001',testEndOfMonthString,'End of month was not expected');
 
     }
     @isTest static void testWithin30DaysPast() {
-        // date2 should be checked for if it is in the past and respond appropriately
+        // date2 should be checked for if it is in the past, if so the expected value is false
     }
     @isTest static void testWithin30DaysFutureOOB() {
-        // outside of 30 days the end of month value should be used
+        // outside of 30 days the expected value is false
     }
     @isTest static void testWithin30DaysFutureIB() {
-        // within 30 days the date2 value should be used
+        // within 30 days the expected value is true
     }
 
     
