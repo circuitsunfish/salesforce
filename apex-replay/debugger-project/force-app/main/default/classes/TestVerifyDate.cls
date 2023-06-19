@@ -28,8 +28,19 @@ private class TestVerifyDate {
     }
     @isTest static void testWithin30DaysFutureIB() {
         // within 30 days the expected value is true
+        Date testDate1 = date.newInstance(2001,10,14);
+        Date testDate2 = date.newInstance(2001, 11, 2);
+        Boolean testDateIB = VerifyDate.DateWithin30Days(testDate1, testDate2);
+        System.assertEquals(true, testDateIB, 'Unexpected result when checking if provided date is within 30 days.');
     }
 
+    @isTest static void testCheckDatewithin30DaysEndOfMonth(){
+
+    }
+
+@isTest static void testCheckDatewithin30DaysDateProvided(){
+        
+    }
     
     
 }
