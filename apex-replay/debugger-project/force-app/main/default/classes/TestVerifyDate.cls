@@ -14,6 +14,10 @@ private class TestVerifyDate {
     }
     @isTest static void testWithin30DaysPast() {
         // date2 should be checked for if it is in the past, if so the expected value is false
+        Date testDate1 = date.newInstance(2001,11,17);
+        Date testDate2 = date.newInstance(2001, 10, 14);
+        String testDatePast = VerifyDate.DateWithin30Days(testDate1, testDate2);
+        System.assertEquals('false', testDatePast, 'Unexpected result when checking if provided date is in the past.')
     }
     @isTest static void testWithin30DaysFutureOOB() {
         // outside of 30 days the expected value is false
