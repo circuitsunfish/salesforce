@@ -35,11 +35,17 @@ private class TestVerifyDate {
     }
 
     @isTest static void testCheckDatewithin30DaysEndOfMonth(){
-
+        Date testDate1 = date.newInstance(2001,10,14);
+        Date testDate2 = date.newInstance(2001, 11, 28);
+        String testCheckDate = VerifyDate.CheckDates(testDate1, testDate2).format();
+        System.assertEquals('10/31/2001', testCheckDate, 'Unexpected result when checkDate was provided date outside 30 days. End of Month expected.');
     }
 
-@isTest static void testCheckDatewithin30DaysDateProvided(){
-        
+    @isTest static void testCheckDatewithin30DaysDateProvided(){
+        Date testDate1 = date.newInstance(2001,10,14);
+        Date testDate2 = date.newInstance(2001, 10, 28);
+        String testCheckDate = VerifyDate.CheckDates(testDate1, testDate2).format();
+        System.assertEquals('10/28/2001', testCheckDate, 'Unexpected result when checkDate was provided date inside 30 days. Date provided expected.'); 
     }
     
     
