@@ -1,4 +1,4 @@
-public class VerifyDate {
+public with sharing class VerifyDate {
 	
 	//method to handle potential checks against two dates
 	public static Date CheckDates(Date date1, Date date2) {
@@ -11,7 +11,7 @@ public class VerifyDate {
 	}
 	
 	//method to check if date2 is within the next 30 days of date1
-	private static Boolean DateWithin30Days(Date date1, Date date2) {
+	public static Boolean DateWithin30Days(Date date1, Date date2) {
 		//check for date2 being in the past
         	if( date2 < date1) { return false; }
         
@@ -22,7 +22,7 @@ public class VerifyDate {
 	}
 
 	//method to return the end of the month of a given date
-	private static Date SetEndOfMonthDate(Date date1) {
+	public static Date SetEndOfMonthDate(Date date1) {
 		Integer totalDays = Date.daysInMonth(date1.year(), date1.month());
 		Date lastDay = Date.newInstance(date1.year(), date1.month(), totalDays);
 		return lastDay;

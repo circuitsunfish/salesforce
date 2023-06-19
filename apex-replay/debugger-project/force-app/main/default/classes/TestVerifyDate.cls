@@ -4,19 +4,22 @@
 private class TestVerifyDate {
     @isTest static void testEndOfMonthDate() {
         // This method should correctly return the end of month for a date
-return null;
+        //https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_date.htm#apex_System_Date_format
+        //https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_date.htm#apex_System_Date_newInstance
+        Date testDate = date.newinstance(2001,11,17);
+        //november has 30 days
+        String testEndOfMonthString = VerifyDate.SetEndOfMonthDate(testDate).format();
+        System.assertEquals('2001/11/30',testEndOfMonthString,'End of month was not expected');
+
     }
     @isTest static void testWithin30DaysPast() {
         // date2 should be checked for if it is in the past and respond appropriately
-return null;
     }
     @isTest static void testWithin30DaysFutureOOB() {
         // outside of 30 days the end of month value should be used
-return null;
     }
     @isTest static void testWithin30DaysFutureIB() {
         // within 30 days the date2 value should be used
-return null;
     }
 
     
